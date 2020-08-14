@@ -230,10 +230,10 @@ void WOLFSSL_TIME(int count)
     #include "m2m_log.h"
 #elif defined(WOLFSSL_ANDROID_DEBUG)
     #include <android/log.h>
+#elif defined(WOLFSSL_LINUXKM)
+    /* the requisite linux/kernel.h is included in wc_port.h, with incompatible warnings masked out. */
 #else
-#ifndef WOLFSSL_LINUXKM
     #include <stdio.h>   /* for default printf stuff */
-#endif
 #endif
 
 #if defined(THREADX) && !defined(THREADX_NO_DC_PRINTF)
