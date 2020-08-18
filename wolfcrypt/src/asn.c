@@ -6221,15 +6221,15 @@ int GetAsnTimeString(void* currTime, byte* buf, word32 len)
 {
     struct tm* ts      = NULL;
     struct tm* tmpTime = NULL;
+    byte* data_ptr  = buf;
+    word32 data_len = 0;
+    int year, mon, day, hour, mini, sec;
 #if defined(NEED_TMP_TIME)
     struct tm tmpTimeStorage;
     tmpTime = &tmpTimeStorage;
 #else
     (void)tmpTime;
 #endif
-    byte* data_ptr  = buf;
-    word32 data_len = 0;
-    int year, mon, day, hour, mini, sec;
 
     WOLFSSL_ENTER("SetAsnTimeString");
 
